@@ -13,3 +13,6 @@ class Visit(models.Model):
     store = models.ForeignKey(Store, on_delete=models.CASCADE)
     longitude = models.FloatField()
     latitude = models.FloatField()
+
+    def store_and_employee(self):
+        return f"{self.store.title} - {self.store.employee.name}"
